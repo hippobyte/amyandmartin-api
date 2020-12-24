@@ -4,14 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 # rails
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 6'
 
 # server
 gem 'puma', '~> 5.0'
 
 # add ons
 gem 'attr_encrypted', '~> 3.1.0'
-gem 'graphiql-rails'
 gem 'graphql', '~> 1'
 gem 'nanoid', '~> 2'
 gem 'paper_trail', '~> 10'
