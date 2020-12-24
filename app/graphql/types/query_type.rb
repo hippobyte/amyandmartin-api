@@ -6,13 +6,11 @@ module Types
   #
   class QueryType < Types::BaseObject
     field :rsvp, [RsvpType], null: true do
-      argument :last_name, String, required: false
-      argument :email, String, required: false
+      argument :invite_code, String, required: true
     end
 
-    def rsvp(last_name: nil, email: nil)
-      return Rsvp.invited.where(guest_id: Guest.where('last_name ilike ?', last_name).ids) if last_name.present?
-      return Rsvp.invited.where(guest_id: Guest.where('email ilike ?', email).ids)         if email.present?
+    def rsvp(invite_code: nil)
+      Rsvp.invited.where(invite_code: invite_code)
     end
   end
 end

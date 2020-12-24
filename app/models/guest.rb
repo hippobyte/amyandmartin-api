@@ -15,7 +15,11 @@ class Guest < ApplicationRecord
   def create_rsvp
     Rsvp.new(
       guest_id: id,
-      status: :pending
+      status: :pending,
+      invite_code: SecureRandom.nanoid(
+        size: 8,
+        alphabet: 'ABCDEFGHIJKLMONPQRSTUVWXYZ123456789'
+      )
     ).save
   end
 end

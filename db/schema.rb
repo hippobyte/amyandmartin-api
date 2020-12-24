@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_053407) do
 
   create_table "rsvps", id: :text, force: :cascade do |t|
     t.text "guest_id"
+    t.text "invite_code"
     t.text "status"
     t.boolean "with_guest"
     t.boolean "with_kids"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_053407) do
     t.jsonb "preferences"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["invite_code"], name: "index_rsvps_on_invite_code"
     t.index ["status"], name: "index_rsvps_on_status"
   end
 

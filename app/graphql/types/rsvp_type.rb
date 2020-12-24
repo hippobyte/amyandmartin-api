@@ -7,6 +7,7 @@ module Types
   class RsvpType < Types::BaseObject
     field :id, ID, null: false
     field :guest, GuestType, null: true
+    field :invite_code, String, null: false
     field :status, String, null: true
     field :guest_count, Integer, null: true
     field :kids_count, Integer, null: true
