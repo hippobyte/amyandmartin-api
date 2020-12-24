@@ -7,10 +7,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  connect_timeout: 2
-  checkout_timeout: 5
+  connect_timeout: 10
+  checkout_timeout: 10
   variables:
-    statement_timeout: 5000
+    statement_timeout: 20000
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch('DB_THREADS') { 5 } %>
