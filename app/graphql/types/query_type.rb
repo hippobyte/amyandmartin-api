@@ -5,12 +5,12 @@ module Types
   # QueryType
   #
   class QueryType < Types::BaseObject
-    field :rsvp, [RsvpType], null: true do
+    field :rsvp, RsvpType, null: true do
       argument :invite_code, String, required: true
     end
 
     def rsvp(invite_code: nil)
-      Rsvp.invited.where(invite_code: invite_code)
+      Rsvp.invited.find_by(invite_code: invite_code)
     end
   end
 end
