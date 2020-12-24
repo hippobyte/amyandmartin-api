@@ -15,8 +15,12 @@ class Startup
   end
 
   def startup
-    set_environment
-    create_db_tunnel if development?
+    if development?
+      set_environment
+      create_db_tunnel
+    end
+
+    nil
   end
 
   def self.perform(&block)
