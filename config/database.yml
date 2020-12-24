@@ -18,8 +18,8 @@ default: &default
 development:
   <<: *default
   host: localhost
-  url: <%= ENV.fetch('DB') %>
-  port: <%= ENV.fetch('DB_PORT') %>
+  url: <%= ENV['DB'] %>
+  port: <%= ENV['DB_PORT'] %>
 
 test:
   <<: *default
