@@ -10,15 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_053407) do
+ActiveRecord::Schema.define(version: 2021_01_13_003226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "guest_contacts", id: :text, force: :cascade do |t|
+    t.text "guest_id"
+    t.text "email"
+    t.text "phone"
+    t.text "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "guests", id: :text, force: :cascade do |t|
     t.text "first_name"
     t.text "last_name"
-    t.text "email"
+    t.text "guest_name"
+    t.integer "wave"
+    t.integer "children_count", default: 0
+    t.integer "guest_count", default: 0
+    t.jsonb "options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -27,13 +40,12 @@ ActiveRecord::Schema.define(version: 2020_12_23_053407) do
     t.text "guest_id"
     t.text "invite_code"
     t.text "status"
-    t.boolean "with_guest"
-    t.boolean "with_kids"
     t.integer "guest_count", default: 0
-    t.integer "kids_count", default: 0
-    t.jsonb "preferences"
+    t.integer "children_count", default: 0
+    t.jsonb "options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["guest_id"], name: "index_rsvps_on_guest_id"
     t.index ["invite_code"], name: "index_rsvps_on_invite_code"
     t.index ["status"], name: "index_rsvps_on_status"
   end

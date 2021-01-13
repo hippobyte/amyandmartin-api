@@ -18,7 +18,7 @@ module Types
     end
 
     def reset_by_email(email: nil)
-      guest = Guest.find_by(email: email)
+      guest = GuestContact.find_by(email: email).guest
 
       if guest.present?
         guest.email

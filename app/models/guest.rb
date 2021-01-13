@@ -5,6 +5,7 @@
 #
 class Guest < ApplicationRecord
   has_one :rsvp, dependent: :destroy
+  has_many :guest_contacts, dependent: :destroy
 
   has_paper_trail
 

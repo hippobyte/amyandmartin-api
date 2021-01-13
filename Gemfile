@@ -7,10 +7,10 @@ ruby '2.6.3'
 gem 'rails', '~> 6'
 
 # server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 5'
 
 # add ons
-gem 'attr_encrypted', '~> 3.1.0'
+gem 'attr_encrypted', '~> 3'
 gem 'graphql', '~> 1'
 gem 'nanoid', '~> 2'
 gem 'paper_trail', '~> 10'
@@ -18,7 +18,6 @@ gem 'pg', '~> 1'
 gem 'rack-cors', '~> 1'
 
 # Cloud
-gem 'aws-sdk-secretsmanager', '~> 1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

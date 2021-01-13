@@ -16,7 +16,7 @@ class Rsvp < ApplicationRecord
   has_paper_trail
 
   after_initialize do
-    self.preferences ||= {}
+    self.options ||= {}
   end
 
   scope :active, -> { where(status: %i[invited confirmed declined]) }
