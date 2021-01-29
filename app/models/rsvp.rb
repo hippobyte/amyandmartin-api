@@ -7,10 +7,7 @@ class Rsvp < ApplicationRecord
   belongs_to :guest
 
   enum status: {
-    pending: 'pending',
-    invited: 'invited',
-    confirmed: 'confirmed',
-    declined: 'declined'
+    pending: 'pending', invited: 'invited', confirmed: 'confirmed', declined: 'declined'
   }
 
   has_paper_trail

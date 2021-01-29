@@ -17,10 +17,19 @@ class Guest < ApplicationRecord
     Rsvp.new(
       guest_id: id,
       status: :pending,
-      invite_code: SecureRandom.nanoid(
-        size: 8,
-        alphabet: 'ABCDEFGHIJKLMONPQRSTUVWXYZ123456789'
-      )
+      partner_status: :pending,
+      child_status: :pending,
+      invite_code: invite_code
     ).save
+  end
+
+  def invite_code
+    code = SecureRandom.nanoid(size: 8, alphabet: '0123456789')
+    raise StandardError, 'Duplicate code, retry pending.' if Rsvp.find_by(invite_code: code).present?
+
+    return code
+  rescue StandardError => e
+    Rails.logger.error(e)
+    retry
   end
 end

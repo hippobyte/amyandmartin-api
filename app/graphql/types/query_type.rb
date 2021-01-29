@@ -14,7 +14,7 @@ module Types
     end
 
     def rsvp(invite_code: nil)
-      Rsvp.invited.find_by(invite_code: invite_code)
+      Rsvp.active.find_by(invite_code: invite_code)
     end
 
     def reset_by_email(email: nil)

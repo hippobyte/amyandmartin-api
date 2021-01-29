@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_003226) do
+ActiveRecord::Schema.define(version: 2021_01_28_190155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(version: 2021_01_13_003226) do
     t.jsonb "options"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "partner_status"
+    t.text "child_status"
+    t.text "dietary_restrictions"
     t.index ["guest_id"], name: "index_rsvps_on_guest_id"
     t.index ["invite_code"], name: "index_rsvps_on_invite_code"
     t.index ["status"], name: "index_rsvps_on_status"
