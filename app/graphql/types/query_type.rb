@@ -20,7 +20,7 @@ module Types
     def reset_by_email(email: nil)
       contact = GuestContact.find_by(email: email)
 
-      if contact.guest.present?
+      if contact.present? && contact.guest.present?
         NotificationMailer.invite_code(
           email: contact.email, code: contact.guest.rsvp.invite_code
         ).deliver
