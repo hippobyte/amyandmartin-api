@@ -18,11 +18,14 @@ module Types
     end
 
     def reset_by_email(email: nil)
-      guest = GuestContact.find_by(email: email).guest
+      contact = GuestContact.find_by(email: email)
 
-      if guest.present?
-        guest.email
-        return guest
+      if contact.guest.present?
+        NotificationMailer.invite_code(
+          email: contact.email, code: contact.guest.rsvp.invite_code
+        ).deliver
+
+        return contact
       end
 
       return nil

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
     <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-    <title>Amy and Martin's Wedding</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <title>Amy and Martin</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
 
     <!-- Web Font / @font-face : BEGIN -->
     <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
@@ -177,7 +177,11 @@
             /* What it does: Adjust typography on small screens to improve readability */
             .email-container p {
                 font-size: 17px !important;
-                line-height: 26px !important;
+                line-height: 22px !important;
+            }
+
+            .email-container strong {
+              font-weight: 600;
             }
         }
 
@@ -198,66 +202,24 @@
       <div style="margin: 35px auto; max-width: 600px; border: 1px solid rgb(194, 197, 202); border-radius: 6px; background-color:rgb(255, 255, 255)">
         <table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%">
           <tr>
-            <td>
-              <div style="padding: 25px;">
-                <table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0">
-                  <tr>
-                    <td width="100%" align="left">
-                      <div style="font-size: 26px; font-weight: 600; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; padding: 10px 0; color: #111743;">
-                        Amy and Martin's Wedding
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div style="font-size: 16px; font-weight: 500; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; padding: 25px; color: rgb(23, 23, 23); background-color: #f6f7f8; border-top: 1px solid rgb(194, 197, 202);">
-                Here is your invitation code.
-              </div>
-            </td>
-          </tr>
-          <tr>
             <td class="email-container">
-              <div style="font-size: 17px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 28px; padding: 25px; color: rgb(23, 23, 23);">
-                <table style="width: 100%;">
-                  <tbody>
-                    <tr>
-                      <td style="width: 30%;">
-                        <span style="font-weight: 500">Invitation Code: </span></td>
-                      </td>
-                      <td><%= @code %></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p>Enter the code aboxe when prompted on our <a style="text-decoration: none; color: #4D5FE7" href="https://www.amyandmartin.com"> Wedding Website.</a></p>
+              <div style="font-size: 20px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 32px; padding: 15px 25px 25px; color: rgb(23, 23, 23);">
+                <p>Enter the code on our <a style="text-decoration: none; color: #4D5FE7" href="https://www.amyandmartin.com"> Wedding website</a> when prompted.</p>
+                <p style="font-weight: 900; font-size: 38px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 48px; color: rgb(23, 23, 23);">
+                  <%= @code %>
+                </p>
               </div>
             </td>
           </tr>
           <tr>
-            <td bgcolor="#F6F7F8">
-              <div style="text-align: left; padding: 15px; color: rgb(43, 43, 51); font-weight: 500; font-size: 14px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                <table>
-                  <tr>
-                    <td>
-                      <div style="padding-right: 20px; margin-right: 20px; border-right: 1px solid gray;">
-                        Amy &amp; Martin's Wedding
-                      </div>
-                    </td>
-                    <td>
-                      <div style="padding-right: 20px; margin-right: 20px; border-right: 1px solid gray;">
-                        <a style="text-decoration: none; color: #4D5FE7" href="mailto:amyche@gmail.com">Email Amy</a>
-                      </div>
-                    </td>
-                    <td>
-                      <div style="padding-right: 20px">
-                        <a style="text-decoration: none; color: #4D5FE7" href="mailto:martinmarzejon@gmail.com">Email Martin</a>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
+            <td>
+              <div style="border-top: 1px solid #cccccc; background: #f2f2f4; text-align: center; padding: 8px 25px; color: rgb(43, 43, 51);">
+                <p style="font-size: 18px; font-weight: 600; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-bottom: 0">
+                  Amy &amp; Martin's Wedding
+                </p>
+                <p style="font-size: 18px; font-weight: 500; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top: 4px; margin-bottom: 16px">
+                  <a style="text-decoration: none; color: #4D5FE7" href="mailto:amyche@gmail.com">Email Amy</a> | <a style="text-decoration: none; color: #4D5FE7" href="mailto:martinmarzejon@gmail.com">Email Martin</a>
+                </p>
               </div>
             </td>
           </tr>
