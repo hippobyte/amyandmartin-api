@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   # PUBLIC API
   namespace 'api', defaults: { format: :json } do
-    post '/guest/create', to: 'guest#create'
+    post '/guest/webhook', to: 'guest#webhook'
   end
 end
