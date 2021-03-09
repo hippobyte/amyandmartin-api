@@ -1,6 +1,6 @@
-#
+# frozen_string_literal: true
+
 # NotificationMailer
-#
 class NotificationMailer < ApplicationMailer
   def invite_code(email:, code:)
     @code = code
