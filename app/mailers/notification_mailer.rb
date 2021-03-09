@@ -8,4 +8,11 @@ class NotificationMailer < ApplicationMailer
       format.html
     end
   end
+
+  def invitation(email:, code:)
+    @code = code
+    mail(to: email, subject: 'Che / Marzejon Wedding Celebration Invite') do |format|
+      format.html
+    end
+  end
 end
