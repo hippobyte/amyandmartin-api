@@ -25,6 +25,8 @@ module Api
       return respond_on_success if guest.update(@data.except(:id))
 
       respond_on_failure
+    rescue RecordNotFound => e
+      create_guest_on_webhook
     end
 
     def guest_params
