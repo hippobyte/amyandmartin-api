@@ -14,7 +14,10 @@ module Types
     end
 
     def rsvp(invite_code: nil)
-      Rsvp.active.find_by(invite_code: invite_code)
+      rsvp = Rsvp.active.find_by(invite_code: invite_code)
+      rsvp.guest.paper_trail_event = 'login'
+      rsvp.guest.touch
+      return rsvp
     end
 
     def reset_by_email(email: nil)

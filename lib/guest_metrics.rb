@@ -23,6 +23,8 @@ class GuestMetrics
         children: rsvp_children_count(guest),
         total: rsvp_total_count(guest),
         dietary_restrictions: rsvp_dietary_restrictions(guest.rsvp),
+        login_count: guest_login_count(guest),
+        last_login: guest_last_login(guest),
         rsvp_date: rsvp_date(guest.rsvp)
       }
     end
@@ -64,5 +66,15 @@ class GuestMetrics
     return email.join(', ') if email.is_a?(Array)
 
     email
+  end
+
+  def guest_login_count(guest)
+    guest.versions.where(event: 'login').count
+  end
+
+  def guest_last_login(guest)
+    return '' unless guest.versions.last.present?
+
+    guest.versions.last.created_at.in_time_zone('America/Los_Angeles').strftime('%Y-%m-%d')
   end
 end
