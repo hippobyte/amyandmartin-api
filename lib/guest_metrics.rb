@@ -18,7 +18,11 @@ class GuestMetrics
         response: guest.rsvp.status,
         first_name: guest.first_name,
         last_name: guest.last_name,
-        email: email(guest.guest_contacts)
+        email: email(guest.guest_contacts),
+        adults: 0,
+        children: 0,
+        total: 0,
+        rsvp_date: guest.confirmed? ? guest.rsvp.updated_at : nil
       }.merge(counts(guest.rsvp))
     end
   end
@@ -26,15 +30,13 @@ class GuestMetrics
   private
 
   def counts(rsvp)
-    if rsvp.confirmed?
-      return {
-        adults: rsvp.guest_count.to_i,
-        children: rsvp.children_count.to_i,
-        total: rsvp.guest_count.to_i + rsvp.children_count.to_i
-      }
-    end
+    return {} unless rsvp.confirmed?
 
-    { adults: 0, children: 0, total: 0 }
+    {
+      adults: rsvp.guest_count.to_i,
+      children: rsvp.children_count.to_i,
+      total: rsvp.guest_count.to_i + rsvp.children_count.to_i
+    }
   end
 
   def email(guest_contacts)
