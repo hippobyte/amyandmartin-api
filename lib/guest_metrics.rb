@@ -22,7 +22,7 @@ class GuestMetrics
         adults: 0,
         children: 0,
         total: 0,
-        rsvp_date: guest.confirmed? ? guest.rsvp.updated_at : nil
+        rsvp_date: guest.rsvp.confirmed? ? guest.rsvp.updated_at : nil
       }.merge(counts(guest.rsvp))
     end
   end
