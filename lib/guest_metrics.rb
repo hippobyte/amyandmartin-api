@@ -22,7 +22,7 @@ class GuestMetrics
         adults: rsvp_adult_count(guest),
         children: rsvp_children_count(guest),
         total: rsvp_total_count(guest),
-        dietary_restrictions: guest.rsvp.dietary_restrictions,
+        dietary_restrictions: rsvp_dietary_restrictions(guest.rsvp),
         rsvp_date: rsvp_date(guest.rsvp)
       }
     end
@@ -47,9 +47,15 @@ class GuestMetrics
   end
 
   def rsvp_date(rsvp)
-    return unless rsvp.confirmed?
+    return '' unless rsvp.confirmed?
 
     rsvp.updated_at.in_time_zone('America/Los_Angeles').strftime('%Y-%m-%d')
+  end
+
+  def rsvp_dietary_restrictions(rsvp)
+    return '' unless rsvp.confirmed? || rsvp.dietary_restrictions.nil?
+
+    rsvp.dietary_restrictions
   end
 
   def email(guest_contacts)
