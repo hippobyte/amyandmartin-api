@@ -11,6 +11,9 @@ class Guest < ApplicationRecord
 
   after_create :create_rsvp
 
+  class << self
+  end
+
   private
 
   def create_rsvp
