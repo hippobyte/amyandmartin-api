@@ -53,7 +53,8 @@ class GuestMetrics
   end
 
   def rsvp_dietary_restrictions(rsvp)
-    return '' unless rsvp.confirmed? || rsvp.dietary_restrictions.present?
+    return '' unless rsvp.confirmed?
+    return '' if rsvp.dietary_restrictions.blank?
 
     rsvp.dietary_restrictions
   end
