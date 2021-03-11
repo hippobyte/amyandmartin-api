@@ -15,8 +15,12 @@ module Types
 
     def rsvp(invite_code: nil)
       rsvp = Rsvp.active.find_by(invite_code: invite_code)
-      rsvp.guest.paper_trail_event = 'login'
-      rsvp.guest.touch
+
+      if rsvp.present?
+        rsvp.guest.paper_trail_event = 'login'
+        rsvp.guest.touch
+      end
+
       return rsvp
     end
 
