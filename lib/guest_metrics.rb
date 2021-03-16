@@ -25,7 +25,8 @@ class GuestMetrics
         dietary_restrictions: rsvp_dietary_restrictions(guest.rsvp),
         login_count: guest_login_count(guest),
         last_login: guest_last_login(guest),
-        rsvp_date: rsvp_date(guest.rsvp)
+        rsvp_date: rsvp_date(guest.rsvp),
+        invite_code: guest.rsvp.invite_code
       }
     end
   end
