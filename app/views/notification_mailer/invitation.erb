@@ -203,6 +203,29 @@
   <table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%">
     <tr>
       <td class="email-container" style="margin: 35px 0;">
+        <div style="margin: 0 50px">
+          <p style="text-align: center; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            Martin and I joyfully invite you to our wedding reception! We heard some did not receive our first invitation over email, so we are re-sending the invitations. We look forward to celebrating with you!
+          </p>
+          <p style="text-align: center; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            All details of our celebration are available online at
+            <a style="color: #08355E; font-weight: 500;" href="https://www.amyandmartin.com">amyandmartin.com</a>.
+            Our website is private, please use your personal invite code found below:
+          </p>
+          <div style="font-size: 24px">
+          <table>
+            <tr>
+              <% @code.split('').each do |item| %>
+                <td>
+                  <div style="padding: 4px 6px; margin: 0 2px; border-radius: 4px; border: 1px solid #ced5db">
+                    <%= item %>
+                  </div>
+                </td>
+              <% end %>
+            </tr>
+          </table>
+          </div>
+        </div>
         <div style="font-size: 20px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 32px; padding: 15px 25px 25px; color: rgb(23, 23, 23);">
           <a href="https://amyandmartin.com">
             <img
@@ -210,26 +233,6 @@
               src="https://hippo-public-assets.s3-us-west-2.amazonaws.com/assets/images/invitation.png"
               />
           </a>
-          <div style="margin: 0 50px">
-            <p style="text-align: center; font-weight: 400; font-size: 16px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
-              All details of our celebration are available online at
-              <a style="color: #08355E; font-weight: 500;" href="https://www.amyandmartin.com">amyandmartin.com</a>.
-              Our website is private, please use your personal invite code found below:
-            </p>
-          </div>
-          <div>
-            <table>
-              <tr>
-                <% @code.split('').each do |item| %>
-                  <td>
-                    <div style="padding: 4px 6px; margin: 0 2px; border-radius: 4px; border: 1px solid #ced5db">
-                      <%= item %>
-                    </div>
-                  </td>
-                <% end %>
-              </tr>
-            </table>
-          </div>
         </div>
       </td>
     </tr>
