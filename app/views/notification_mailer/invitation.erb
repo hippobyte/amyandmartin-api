@@ -209,7 +209,7 @@
           </p>
           <p style="text-align: center; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
             All details of our celebration are available online at
-            <a style="color: #08355E; font-weight: 500;" href="https://www.amyandmartin.com">amyandmartin.com</a>.
+            <a style="color: #08355E; font-weight: 500;" href=<%= "https://www.amyandmartin.com?invitecode=#{@code}" %>>amyandmartin.com</a>.
             Our website is private, please use your personal invite code found below:
           </p>
           <div style="font-size: 24px">
@@ -227,7 +227,7 @@
           </div>
         </div>
         <div style="font-size: 20px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; line-height: 32px; padding: 15px 25px 25px; color: rgb(23, 23, 23);">
-          <a href="https://amyandmartin.com">
+          <a href=<%= "https://www.amyandmartin.com?invitecode=#{@code}" %>>
             <img
               width="100%"
               src="https://hippo-public-assets.s3-us-west-2.amazonaws.com/assets/images/invitation.png"

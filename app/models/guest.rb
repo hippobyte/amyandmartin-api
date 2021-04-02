@@ -14,6 +14,10 @@ class Guest < ApplicationRecord
   class << self
   end
 
+  def invite_url
+    "https://www.amyandmartin.com?invitecode=#{rsvp.invite_code}"
+  end
+
   private
 
   def create_rsvp
@@ -34,9 +38,5 @@ class Guest < ApplicationRecord
   rescue StandardError => e
     Rails.logger.error(e)
     retry
-  end
-
-  def invite_url
-    "https://www.amyandmartin.com?invitecode=#{rsvp.invite_code}"
   end
 end
