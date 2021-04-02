@@ -35,4 +35,8 @@ class Guest < ApplicationRecord
     Rails.logger.error(e)
     retry
   end
+
+  def invite_url
+    "https://www.amyandmartin.com?invitecode=#{rsvp.invite_code}"
+  end
 end
