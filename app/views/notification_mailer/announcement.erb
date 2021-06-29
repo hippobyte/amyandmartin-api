@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+  <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+  <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+  <title>Amy and Martin</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+  <!-- Web Font / @font-face : BEGIN -->
+  <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+  <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+  <!--[if mso]>
+  <style>
+    * {
+      font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    }
+  </style>
+  <![endif]-->
+
+  <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+  <!--[if !mso]><!-->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700' rel='stylesheet' type='text/css'>
+  <!--<![endif]-->
+
+  <!-- Web Font / @font-face : END -->
+
+  <!-- CSS Reset : BEGIN -->
+  <style>
+
+      /* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+      html,
+      body {
+          margin: 0 auto !important;
+          padding: 0 !important;
+          height: 100% !important;
+          width: 100% !important;
+      }
+
+      /* What it does: Stops email clients resizing small text. */
+      * {
+          -ms-text-size-adjust: 100%;
+          -webkit-text-size-adjust: 100%;
+      }
+
+      /* What it does: Centers email on Android 4.4 */
+      div[style*="margin: 16px 0"] {
+          margin: 0 !important;
+      }
+
+      /* What it does: Stops Outlook from adding extra spacing to tables. */
+      table,
+      td {
+          mso-table-lspace: 0pt !important;
+          mso-table-rspace: 0pt !important;
+      }
+
+      /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+      table {
+          border-spacing: 0 !important;
+          border-collapse: collapse !important;
+          table-layout: fixed !important;
+          margin: 0 auto !important;
+      }
+      table table table {
+          table-layout: auto;
+      }
+
+      /* What it does: Uses a better rendering method when resizing images in IE. */
+      img {
+          -ms-interpolation-mode:bicubic;
+      }
+
+      /* What it does: A work-around for email clients meddling in triggered links. */
+      *[x-apple-data-detectors],  /* iOS */
+      .x-gmail-data-detectors,    /* Gmail */
+      .x-gmail-data-detectors *,
+      .aBn {
+          border-bottom: 0 !important;
+          cursor: default !important;
+          color: inherit !important;
+          text-decoration: none !important;
+          font-size: inherit !important;
+          font-family: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
+      .a6S {
+          display: none !important;
+          opacity: 0.01 !important;
+      }
+      /* If the above doesn't work, add a .g-img class to any image in question. */
+      img.g-img + div {
+          display: none !important;
+      }
+
+      /* What it does: Prevents underlining the button text in Windows 10 */
+      .button-link {
+          text-decoration: none !important;
+      }
+
+      font {
+          display: none !important;
+      }
+
+      /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+      /* Create one of these media queries for each additional viewport size you'd like to fix */
+      /* Thanks to Eric Lepetit (@ericlepetitsf) for help troubleshooting */
+      @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */
+          .email-container {
+              min-width: 375px !important;
+          }
+      }
+
+  </style>
+  <!-- CSS Reset : END -->
+
+  <!-- Progressive Enhancements : BEGIN -->
+  <style>
+
+      /* What it does: Hover styles for buttons */
+      .button-td,
+      .button-a {
+          transition: all 100ms ease-in;
+      }
+      .button-td:hover,
+      .button-a:hover {
+          background: #555555 !important;
+          border-color: #555555 !important;
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 600px) {
+
+          .email-container {
+              width: 100% !important;
+              margin: auto !important;
+          }
+
+          /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+          .fluid {
+              max-width: 100% !important;
+              height: auto !important;
+              margin-left: auto !important;
+              margin-right: auto !important;
+          }
+
+          /* What it does: Forces table cells into full-width rows. */
+          .stack-column,
+          .stack-column-center {
+              display: block !important;
+              width: 100% !important;
+              max-width: 100% !important;
+              direction: ltr !important;
+          }
+          /* And center justify these ones. */
+          .stack-column-center {
+              text-align: left !important;
+          }
+
+          /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+          .center-on-narrow {
+              text-align: left !important;
+              display: block !important;
+              margin-left: auto !important;
+              margin-right: auto !important;
+              float: none !important;
+          }
+          table.center-on-narrow {
+              display: inline-block !important;
+          }
+
+          /* What it does: Adjust typography on small screens to improve readability */
+          .email-container p {
+              font-size: 17px !important;
+              line-height: 22px !important;
+          }
+
+          .email-container strong {
+              font-weight: 600;
+          }
+      }
+
+  </style>
+  <!-- Progressive Enhancements : END -->
+
+  <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+  <!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+  </xml>
+  <![endif]-->
+</head>
+<body width=“100%” style="margin: 45px 0; padding: 0 !important; mso-line-height-rule: exactly; background: url(https://hippo-public-assets.s3-us-west-2.amazonaws.com/assets/images/backgroundleaves.jpg)">
+<div style="margin: 0 auto; max-width: 600px; border: 2px solid rgb(46, 46, 46); border-radius: 6px; background-color:rgb(255, 255, 255)">
+  <table width="100%" role="presentation" cellspacing="0" cellpadding="0" border="0" style="width: 100%">
+    <tr>
+      <td class="email-container" style="margin: 35px 0;">
+        <div style="margin: 50px 50px">
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            Greetings,
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            We're excited to see all of you at our wedding celebration in Tahoe, CA on September 5, 2021.
+            If you have not <a style="color: #08355E; font-weight: 500;" href=<%= "https://www.amyandmartin.com?invitecode=#{@code}" %>RSVP'ed</a>
+            yet, or you would like to
+            <a style="color: #08355E; font-weight: 500;" href=<%= "https://www.amyandmartin.com?invitecode=#{@code}" %>change your RSVP</a>,
+            please finalize your decision by July 2, 2021 so we can provide the information to our wedding venue.
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            California reopened on June 25, removing restrictions for individuals who are fully vaccinated.
+            We're excited that, for our wedding reception, there will be no capacity restriction, no spacing restriction,
+            and no mask mandates outside of
+            <a style="color: #08355E; font-weight: 500;" href="https://www.squawalpine.com/events-and-activities/activity-finder/aerial-tram">riding the Aerial Tram</a>
+            to the wedding location.
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            We will continue to update
+            <a style="color: #08355E; font-weight: 500;" href=<%= "https://www.amyandmartin.com?invitecode=#{@code}" %>
+              our wedding website
+            </a> with additional details including an
+            agenda for our wedding day celebration. Ahead of that, on Sept 5, we will begin with
+            cocktail hour at 4:00 PM at <a style="color: #08355E; font-weight: 500;" href="https://www.squawalpine.com/high-camp-experience">High Camp in Squaw Valley</a>
+            on the patio and will be followed by
+            dinner and dancing inside. You will need to take the Aerial Tram to get to High Camp.
+            Wedding guests will be provided a wrist band for free usage of the Aerial Tram during our
+            planned wedding hours, and the Aeriel Tram will run on demand for our celebration if you arrive late or
+            need to leave early. The Aerial Tram is handicap accessible.
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            If you have not booked your accommodations yet, we suggest you begin quickly. If you are looking for a babysitter, let us know,
+            and we can put you in touch with a few parents who are discussing a shared babysitter situation.
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            We look forward with joy to seeing all of you at
+            High Camp in Squaw Valley Resort, Tahoe, CA
+            on Sunday, September 5, 2021.
+          </p>
+          <p style="text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+            Wishing you a fanttastic summer,
+            <br />
+            <strong>Amy and Martin</strong>
+            <br />
+          <div style="margin-top: 30px">
+            <div style="display: inline; padding: 8px; border: 1px solid #171cc6; border-radius: 4px; text-align: left; font-weight: 400; font-size: 18px; line-height: 26px; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(23, 23, 23);">
+              <a
+                style="color: #171cc6; font-weight: 600; font-size: 14px; text-decoration: none;"
+                href="https://hippo-public-assets.s3-us-west-2.amazonaws.com/assets/che-marzejon-wedding.ics"
+              >
+                ADD EVENT TO CALENDAR
+              </a>
+            </div>
+          </div>
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="border-top: 1px solid #cccccc; background: #08345e0f; text-align: center; padding: 8px 25px; color: rgb(43, 43, 51);">
+          <p style="font-size: 16px; font-weight: 600; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-bottom: 0">
+            Amy &amp; Martin's Wedding
+          </p>
+          <p style="font-size: 14px; font-weight: 500; font-family: 'Montserrat', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top: 4px; margin-bottom: 16px">
+            <a style="text-decoration: none; color: #08355E" href="mailto:amyche@gmail.com">Email Amy</a> | <a style="text-decoration: none; color: #08355E" href="mailto:martinmarzejon@gmail.com">Email Martin</a>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
